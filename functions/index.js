@@ -1,21 +1,14 @@
 const functions = require("firebase-functions");
 const admin = require("firebase-admin");
-const { pick, omitBy } = require("lodash");
+const { pick } = require("lodash");
 
 admin.initializeApp();
 
 exports.fnEcho = functions.https.onRequest((req, res) => {
   const request = pick(req, [
-    "domain",
-    "headers",
-    "url",
-    "method",
-    "baseUrl",
-    "originalUrl",
-    "params"
+    "hostname",
+    "headers"
   ]);
 
-  const env = omitBy(process.env, (value, key) => key.startsWith("npm_"));
-
-  res.send({ request, env });
+  res.send({ request });
 });

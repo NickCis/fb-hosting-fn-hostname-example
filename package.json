@@ -1,0 +1,12 @@
+{
+  "name": "fb-hosting-fn-hostname-example",
+  "version": "1.0.0",
+  "scripts": {
+    "postinstall": "yarn install --cwd functions"
+  },
+  "main": "index.js",
+  "license": "MIT",
+  "devDependencies": {
+    "firebase-tools": "^6.10.0"
+  }
+}
